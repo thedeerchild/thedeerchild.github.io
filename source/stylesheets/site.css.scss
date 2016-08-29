@@ -1,0 +1,202 @@
+@charset "utf-8";
+
+$z0: 0;
+$z1: 100;
+$z2: 1000;
+$z3: 10000;
+$z4: 100000;
+$z5: 1000000;
+
+*, *::after, *::before {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  display: block;
+  margin: 0;
+  background-color: darken(#FF6F2F, 50%);
+}
+  
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(-180deg, rgba(242,97,33,0.00) 62%, rgba(#9A3D13,0.6) 89%), url('/images/background.jpg');
+  background-position: center bottom, center 65%;
+  background-attachment: fixed, fixed;
+  background-size: cover, cover;
+  background-blend-mode: darken;
+  transition: -webkit-filter 300ms ease-out;
+}
+
+.title {
+  position: absolute;
+  top: 5rem;
+  left: 5rem;
+  width: 50%;
+  
+  &__wordmark {
+    width: 100%;
+  }
+
+  &__tagline {
+    color: white;
+    font-size: 3rem;
+    font-family: 'Montserrat';
+    font-weight: 300;
+    margin: 2rem 0 0;
+  }
+}
+
+.main-nav {
+  position: absolute;
+  bottom: 2rem;
+  right: 5rem;
+  z-index: $z2;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    display: inline-block;
+
+    &:not(:last-child) {
+      margin-right: 5rem;
+    }
+  }
+
+  a {
+    color: white;
+    font-size: 1.5rem;
+    font-family: 'Montserrat';
+    font-weight: 300;
+    text-decoration: none;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.view {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  z-index: $z1;
+  opacity: 0;
+
+  .back {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    text-decoration: none;
+
+    &:before {
+      position: absolute;
+      top: 2rem;
+      left: 5rem;
+      content: '← Back';
+      color: white;
+      font-size: 1.5rem;
+      font-family: 'Montserrat';
+      font-weight: 300;
+    }
+
+    &:focus {
+      &:before {
+        outline: -webkit-focus-ring-color auto 5px;
+      }
+    }
+  }
+}
+
+.contact-links {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  li {
+    text-align: center;
+    font-size: 3rem;
+  }
+
+  a {
+    display: block;
+    color: white;
+    font-family: 'Montserrat';
+    font-weight: 300;
+    text-decoration: none;
+    padding: 1rem;
+  }
+}
+
+.text-modal {
+  color: white;
+  font-family: 'Montserrat';
+  font-weight: 300;
+  border-radius: 0.5rem;
+  padding: 2rem 3.5rem;
+  width: 100%;
+  max-width: 47rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-height: 80vh;
+  overflow-y: scroll;
+
+  h3 {
+    font-size: 4rem;
+    margin: 0 0 2rem;
+  } 
+
+  p {
+    max-width: 40rem;
+    line-height: 1.5;
+  }
+
+  a {
+    color: white;
+  }
+}
+
+*:target {
+  display: block;
+  animation: fade-in-delay;
+  animation-duration: 500ms;
+  opacity: 1;
+
+  & ~ .background {
+    -webkit-filter: brightness(0.3) blur(10px);
+  }
+}
+
+@keyframes fade-in-delay {
+  from {
+    opacity: 0;
+    -webkit-animation-timing-function: ease-in;
+  }
+  50% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

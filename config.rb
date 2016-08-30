@@ -37,6 +37,7 @@ end
 # Build-specific configuration
 activate :external_pipeline,
   name: :gulp,
-  command: 'gulp build',
+  command: 'gulp watch',
   source: '.tmp',
   latency: 1
+

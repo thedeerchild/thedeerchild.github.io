@@ -30,18 +30,28 @@ body {
   overflow-y: hidden;
 }
   
+
+$background-gradient: linear-gradient(-180deg, rgba(242,97,33,0.00) 62%, rgba(#9A3D13,0.6) 89%);
+$sizes: '1216', '1263', '1331', '1387', '1422', '1463', '1530', '1575', '1632', '1682', '1732', '1783', '1845', '1904', '1918', '1972', '2042', '2058', '2119', '2138', '2207', '2222', '2306', '2332', '2419';
+
 .background {
   position: fixed;
   top: 0;
   left: 0;
   height: 100vh;
   width: 100%;
-  background-image: linear-gradient(-180deg, rgba(242,97,33,0.00) 62%, rgba(#9A3D13,0.6) 89%), url('/images/background.jpg');
+  background-image: $background-gradient, url('/images/background-960.jpg');
   background-position: center bottom, center 65%;
   background-attachment: fixed, fixed;
   background-size: cover, cover;
   background-blend-mode: darken;
   transition: filter 300ms ease-out;
+
+  @each $breakpoint in $sizes {
+    @media (min-width: #{$breakpoint}px) {
+      background-image: $background-gradient, url("/images/background-#{$breakpoint}.jpg");
+    }
+  }
 }
 
 .title {

@@ -15,7 +15,7 @@ var OUTPUT_DIR = '.tmp/';
 gulp.task('jpgs', function() {
     return gulp.src(IMAGES_DIR + '**/*.jpg')
     .pipe(imagemin({ progressive: true }))
-    .pipe(gulp.dest('tmp'));
+    .pipe(gulp.dest(IMAGES_DIR));
 });
 
 gulp.task('sass', function () {

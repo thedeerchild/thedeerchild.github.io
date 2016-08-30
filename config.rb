@@ -41,3 +41,4 @@ activate :external_pipeline,
   source: '.tmp',
   latency: 1
 
+activate :asset_hash

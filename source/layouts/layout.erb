@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en-US">
   <head>
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta charset="utf-8">
@@ -12,7 +12,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="og:site_name" content="thedeerchild">
     <meta name="twitter:image:alt" content="thedeerchild (Eric Morris)">
-
+    
     <title><%= current_page.data.title || 'thedeerchild' %></title>
 
     <%= stylesheet_link_tag :site %>
@@ -20,6 +20,5 @@
 
   <body class="<%= page_classes %>">
     <%= yield %>
-    <%= javascript_include_tag :all %>
   </body>
 </html>

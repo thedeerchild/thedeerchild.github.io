@@ -35,10 +35,8 @@ end
 # end
 
 # Build-specific configuration
-configure :build do
-  # Minify CSS on build
-  # activate :minify_css
-
-  # Minify Javascript on build
-  # activate :minify_javascript
-end
+activate :external_pipeline,
+  name: :gulp,
+  command: 'gulp build',
+  source: '.tmp',
+  latency: 1

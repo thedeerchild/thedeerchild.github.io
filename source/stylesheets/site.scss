@@ -1,5 +1,15 @@
 @charset "utf-8";
-@import 'https://fonts.googleapis.com/css?family=Montserrat';
+@font-face {
+  font-family: 'Montserrat';
+  src: url('subset-Montserrat-Light.eot');
+  src: local('Montserrat Light'), local('Montserrat-Light'),
+    url('/fonts/subset-Montserrat-Light.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/subset-Montserrat-Light.woff2') format('woff2'),
+    url('/fonts/subset-Montserrat-Light.woff') format('woff'),
+    url('/fonts/subset-Montserrat-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
 
 $z0: 0;
 $z1: 100;
@@ -31,7 +41,7 @@ body {
   background-attachment: fixed, fixed;
   background-size: cover, cover;
   background-blend-mode: darken;
-  transition: -webkit-filter 300ms ease-out;
+  transition: filter 300ms ease-out;
 }
 
 .title {
@@ -236,7 +246,7 @@ body {
   opacity: 1;
 
   & ~ .background {
-    -webkit-filter: brightness(0.3) blur(10px);
+    filter: brightness(0.3) blur(10px);
   }
 
   @media (max-width: 37rem) {
@@ -249,7 +259,7 @@ body {
 @keyframes fade-in-delay {
   from {
     opacity: 0;
-    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
   }
   50% {
     opacity: 0;

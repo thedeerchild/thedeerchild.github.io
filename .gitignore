@@ -6,9 +6,11 @@
 
 # Ignore bundler config
 /.bundle
+/node_modules
 
 # Ignore the build directory
 /build
+/.tmp
 
 # Ignore cache
 /.sass-cache

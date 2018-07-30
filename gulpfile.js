@@ -21,8 +21,7 @@ gulp.task('jpgs', function() {
 gulp.task('sass', function () {
     return sass(SCSS_DIR + '**/*.scss', { 
       noCache: true,
-      style: "compressed",
-      lineNumbers: false
+      style: "compressed"
     })
     .pipe(autoprefixer({
       browsers: ['last 2 versions'],

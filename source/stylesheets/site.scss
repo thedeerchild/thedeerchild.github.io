@@ -18,6 +18,8 @@ $z3: 10000;
 $z4: 100000;
 $z5: 1000000;
 
+$main-breakpoint: '49rem';
+
 *, *::after, *::before {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -80,7 +82,7 @@ $sizes: '1216', '1263', '1331', '1387', '1422', '1463', '1530', '1575', '1632', 
     margin: 2rem 0 0;
   }
 
-  @media (max-width: 37rem) {
+  @media (max-width: #{$main-breakpoint}) {
     top: 2rem;
     left: 2rem;
     width: calc(100% - 4rem);
@@ -124,7 +126,7 @@ $sizes: '1216', '1263', '1331', '1387', '1422', '1463', '1530', '1575', '1632', 
     }
   }
 
-  @media (max-width: 37rem) {
+  @media (max-width: #{$main-breakpoint}) {
     right: 2rem;
 
     li {
@@ -167,7 +169,7 @@ $sizes: '1216', '1263', '1331', '1387', '1422', '1463', '1530', '1575', '1632', 
       font-family: 'Montserrat';
       font-weight: 300;
 
-      @media (max-width: 37rem) {
+      @media (max-width: #{$main-breakpoint}) {
         left: 2rem;
         font-size: 1rem;
       }
@@ -206,7 +208,7 @@ $sizes: '1216', '1263', '1331', '1387', '1422', '1463', '1530', '1575', '1632', 
     padding: 1rem;
   }
 
-  @media (max-width: 37rem) {
+  @media (max-width: #{$main-breakpoint}) {
     li {
       font-size: 1.5rem;
     }
@@ -242,7 +244,7 @@ $sizes: '1216', '1263', '1331', '1387', '1422', '1463', '1530', '1575', '1632', 
     color: white;
   }
 
-  @media (max-width: 37rem) {
+  @media (max-width: #{$main-breakpoint}) {
     padding: 0 2rem 1rem;
     top: 4rem;
     left: 0;
@@ -267,7 +269,7 @@ $sizes: '1216', '1263', '1331', '1387', '1422', '1463', '1530', '1575', '1632', 
     filter: brightness(0.3) blur(10px);
   }
 
-  @media (max-width: 37rem) {
+  @media (max-width: #{$main-breakpoint}) {
     & ~ .main-nav {
       display: none;
     }

@@ -42,3 +42,9 @@ activate :external_pipeline,
   latency: 1
 
 activate :asset_hash
+
+activate :deploy do |deploy|
+  deploy.deploy_method = :git
+  deploy.branch = 'master'
+  deploy.build_before = true
+end
